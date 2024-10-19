@@ -6,7 +6,7 @@ import { ethers } from "ethers";
 import { abi } from "./abi";
 
 // Add the contract address inside the quotes
-const CONTRACT_ADDRESS = "0xF02C9B63dDaA173AA8a7794B559200A3f0418E92"; 
+const CONTRACT_ADDRESS = "0x1617b99f0701fd466ef2a72097e975a530a8deca"; 
 
 export function App( props ) {  
     const [friends, setFriends] = useState(null);
@@ -37,7 +37,7 @@ export function App( props ) {
 				if( present )
 					username = await contract.getUsername( address );
 				else {
-					username = prompt('Enter a username', 'Guest'); 
+					username = prompt('Enter a username (Need not to be your actual name)', 'Guest'); 
 					if( username === '' ) username = 'Guest';
 					await contract.createAccount( username );
 				}
@@ -152,7 +152,7 @@ export function App( props ) {
             <Row>
                 {/* Here the friends list is shown */}
                 <Col style={{ "paddingRight":"0px", "borderRight":"2px solid #000000" }}>
-                    <div style={{ "backgroundColor":"#DCDCDC", "height":"100%", overflowY:"auto" }}>
+                    <div style={{ "backgroundColor":"#fff0ec", "height":"100%", overflowY:"auto" }}>
                           <Row style={{ marginRight:"0px" }}  >
                               <Card style={{ width:'100%', alignSelf:'center', marginLeft:"15px" }}>
                                 <Card.Header>
@@ -165,7 +165,7 @@ export function App( props ) {
                     </div>
                 </Col>
                 <Col xs={ 8 } style={{ "paddingLeft":"0px" }}>
-                    <div style={{ "backgroundColor":"#DCDCDC", "height":"100%" }}>
+                    <div style={{ "backgroundColor":"#fff0ec", "height":"100%" }}>
                         {/* Chat header with refresh button, username and public key are rendered here */}
                         <Row style={{ marginRight:"0px" }}>
                               <Card style={{ width:'100%', alignSelf:'center', margin:"0 0 5px 15px" }}>
